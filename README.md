@@ -1,4 +1,4 @@
-# finalProj.io
+# finalProj
 
 Shinyapp link: https://nquiazon.shinyapps.io/MyShinyApp/
 

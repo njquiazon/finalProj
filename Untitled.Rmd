@@ -1,0 +1,42 @@
+---
+title: "Simple Linear Model for Boston Dataset"
+author: "Nina Quiazon"
+date: "1/31/2021"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## About the Project and The Boston Dataset
+
+This project aims to introduce simple linear regression to beginners by using the Boston dataset. The Boston dataset contains data on housing values in the suburbs of Boston. By using this dataset, we can introduce users to simple house value prediction given the percentage of lower status of the population.
+
+## Why use the LSTAT as predictor?
+
+- Considerable R^2 value
+- Cor value with respect to median house value is extremely high
+- Easier to see correlation
+
+## Variance explained by the LSAT predictor
+
+```{r boston, echo = TRUE, message = FALSE, warning = FALSE}
+options(width = 70)
+library(MASS)
+library(dplyr)
+data(Boston)
+Boston <- Boston %>% select(medv, everything())
+sort(cor(Boston)[1,])
+summary(lm(medv ~ lstat, data= Boston))$adj.r.squared
+```
+
+## Final predictor model
+
+```{r pressure, echo = FALSE}
+modelLstat <- lm(medv ~ lstat, data = Boston)
+plot(Boston$lstat, Boston$medv, xlab = "Lower Status of Pop in %",
+         ylab = "Median value of home in $1000s")
+abline(modelLstat, col = "red", lwd = 2)
+```
+

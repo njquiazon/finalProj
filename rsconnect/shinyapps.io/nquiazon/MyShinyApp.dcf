@@ -1,0 +1,12 @@
+name: MyShinyApp
+title: MyShinyApp
+username:
+account: nquiazon
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3554203
+bundleId: 4163684
+url: https://nquiazon.shinyapps.io/MyShinyApp/
+when: 1612108205.30523
+asMultiple: FALSE
+asStatic: FALSE
